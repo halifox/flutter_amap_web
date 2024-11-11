@@ -1,9 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/amap.dart';
-import 'package:flutter_web_amap/js/base/LngLat.dart';
-import 'package:flutter_web_amap/js/control/Control.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 ///AMap.Geolocation 定位服务插件。融合了浏览器定位、高精度IP定位、安卓定位sdk辅助定位等多种手段，提供了获取当前准确位置、获取当前城市信息、持续定位(浏览器定位)等功能。

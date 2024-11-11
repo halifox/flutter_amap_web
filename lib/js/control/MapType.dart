@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/control/Control.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 //地图类型切换插件。用户通过该插件进行地图切换。

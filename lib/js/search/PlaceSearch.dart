@@ -1,9 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/amap.dart';
-import 'package:flutter_web_amap/js/base/Bounds.dart';
-import 'package:flutter_web_amap/js/base/LngLat.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 /// 地点搜索服务插件，提供某一特定地区的位置查询服务。

@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/amap.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 //切片图层类，该类为基础类。

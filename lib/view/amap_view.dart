@@ -5,8 +5,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_web_amap/js/amap.dart';
-import 'package:flutter_web_amap/js/loader.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 typedef AMapController = AMap;
 

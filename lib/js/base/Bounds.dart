@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/base/LngLat.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 //地物对象的经纬度矩形范围。

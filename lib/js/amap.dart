@@ -3,10 +3,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:flutter_web_amap/js/base/LngLat.dart';
-import 'package:flutter_web_amap/js/base/Pixel.dart';
-import 'package:flutter_web_amap/js/base/Size.dart';
-import 'package:flutter_web_amap/js/control/Control.dart';
+import 'package:flutter_web_amap/amap.dart';
 import 'package:js/js.dart';
 
 /// 高德地图js，文档：https://lbs.amap.com/api/javascript-api/guide/abc/prepare

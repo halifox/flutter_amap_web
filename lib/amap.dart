@@ -21,4 +21,6 @@ export 'js/location/Geolocation.dart';
 export 'js/search/AutoComplete.dart';
 export 'js/search/CloudDataSearch.dart';
 export 'js/search/PlaceSearch.dart';
+export 'js/driving/Driving.dart';
 export 'view/amap_view.dart';
+export 'package:js/js.dart';

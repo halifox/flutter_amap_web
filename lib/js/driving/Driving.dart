@@ -2,7 +2,6 @@
 library amap;
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 //驾车路线规划服务，提供起、终点坐标的驾车导航路线查询功能。AMap. Driving构造函数的参数为 DrivingOptions 对象。DrivingOptions 允许设置驾车策略和返回信息详略。用户可以通过自定义回调函数取回并显示查询结果。若服务请求失败，系统将返回错误信息
 @JS()
@@ -85,6 +84,22 @@ class DrivingResult {
     int taxi_cost,
     List<DriveRoute> routes,
   });
+
+  external String get info;
+
+  external LngLat get origin;
+
+  external LngLat get destination;
+
+  external Poi get start;
+
+  external Poi get end;
+
+  external Poi get waypoints;
+
+  external int get taxi_cost;
+
+  external List<DriveRoute> get routes;
 }
 
 // 	驾车规划路线列表元素
@@ -104,5 +119,167 @@ class DriveRoute {
     int tolls,
     int tolls_distance,
     int restriction,
+    List<dynamic /*DriveStepBasic | DriveStepDetail*/ > steps,
   });
+
+  external int get distance;
+
+  external int get time;
+
+  external String get policy;
+
+  external int get tolls;
+
+  external int get tolls_distance;
+
+  external int get restriction;
+
+  external List<dynamic /*DriveStepBasic | DriveStepDetail*/ > get steps;
+}
+
+//DriveStep 对象(基本信息)
+//
+// 属性说明：
+// start_location (LngLat) : 此路段起点
+// end_location (LngLat) : 此路段终点
+// instruction (string) : 此路段说明，如“沿北京南站路行驶565米右转”
+// action (string) : 本驾车子路段完成后动作
+// assist_action (string) : 驾车子路段完成后辅助动作，一般为到达某个目的地时返回
+// orientation (string) : 驾车方向
+// road (string) : 驾车方向
+// distance (number) : 此路段距离，单位：米
+// tolls (number) : 此段收费，单位：元
+// tolls_distance (number) : 收费路段长度，单位：米
+// toll_road (string) : 主要收费道路
+// time (number) : 此路段预计使用时间，单位：秒
+// path (Array<LngLat>) : 此路段坐标集合
+@JS()
+@anonymous
+class DriveStepBasic {
+  external factory DriveStepBasic({
+    LngLat startLocation,
+    LngLat endLocation,
+    String instruction,
+    String action,
+    String assistAction,
+    String orientation,
+    String road,
+    double distance,
+    double tolls,
+    double tollsDistance,
+    String tollRoad,
+    double time,
+    List<LngLat> path,
+  });
+
+  external LngLat get startLocation;
+
+  external LngLat get endLocation;
+
+  external String get instruction;
+
+  external String get action;
+
+  external String get assistAction;
+
+  external String get orientation;
+
+  external String get road;
+
+  external double get distance;
+
+  external double get tolls;
+
+  external double get tollsDistance;
+
+  external String get tollRoad;
+
+  external double get time;
+
+  external List<LngLat> get path;
+}
+
+// DriveStep 对象(详细信息)
+// cities (Array<ViaCity>) : 途径城市列表
+// tmcs (Array<TMC>) : 实时交通信息列表
+@JS()
+@anonymous
+class DriveStepDetail {
+  external factory DriveStepDetail({
+    List<ViaCity> cities,
+    List<TMC> tmcs,
+  });
+
+  external List<ViaCity> get cities;
+
+  external List<TMC> get tmcs;
+}
+
+// cities.city.name
+// 类型：string	途径名称
+// cities.city.citycode
+// 类型：string	城市编码
+// cities.city.adcode
+// 类型：string	区域编码
+// cities.city.districts
+// 类型：Array<District>	途径行政区列表
+@JS()
+@anonymous
+class ViaCity {
+  external factory ViaCity({
+    String name,
+    String cityCode,
+    String adCode,
+    List<District> districts,
+  });
+
+  external String get name;
+
+  external String get cityCode;
+
+  external String get adCode;
+
+  external List<District> get districts;
+}
+
+// cities.city.districts.district.name
+// 类型：string	区域名称
+// cities.city.districts.district.adcode
+// 类型：string	区域编码
+@JS()
+@anonymous
+class District {
+  external factory District({
+    String name,
+    String adCode,
+  });
+
+  external String get name;
+
+  external String get adCode;
+}
+
+// 实时交通信息列表
+// tmcs.tmc
+// 类型：TMC	实时交通信息列表元素
+// tmcs.tmc.lcode
+// 类型：string	路况信息对应的编码 如果direction是正向 lcode返回值大于0；否则lcode，返回值小于0； 如果返回0则说明此路段无lcode
+// tmcs.tmc.distance
+// 类型：number	此lcode对应的路段长度，单位: 米
+// tmcs.tmc.status
+// 类型：string	路况状态，可能的值有：未知，畅通，缓行，拥堵
+@JS()
+@anonymous
+class TMC {
+  external factory TMC({
+    String lCode,
+    int distance,
+    String status,
+  });
+
+  external String get lCode;
+
+  external int get distance;
+
+  external String get status;
 }

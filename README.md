@@ -197,15 +197,15 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] DriveStepBasic
   - [x] DriveStepDetail
   - [ ] TruckDriving
-  - [ ] Walking
-  - [ ] WalkingCallback
-  - [ ] WalkingResult
-  - [ ] Transfer
-  - [ ] TransferCallback
-  - [ ] TransferResult
-  - [ ] Riding
-  - [ ] RidingCallback
-  - [ ] RidingResult
+  - [x] Walking
+  - [x] WalkingCallback
+  - [x] WalkingResult
+  - [x] Transfer
+  - [x] TransferCallback
+  - [x] TransferResult
+  - [x] Riding
+  - [x] RidingCallback
+  - [x] RidingResult
   - [ ] DragRoute
   - [ ] DragRouteTruck
   - [ ] GraspRoad

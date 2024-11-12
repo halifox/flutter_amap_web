@@ -2,7 +2,6 @@
 library amap;
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 // 鹰眼控件，用于显示缩略地图，显示于地图右下角，可以随主图的视口变化而变化，也可以配置成固定位置实现类似于南海附图的效果。
 @JS()

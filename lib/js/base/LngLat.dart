@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:js/js.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 // 经纬度坐标，确定地图上的一个点。
 // lng 类型：Number   经度值，表示地理坐标的经度部分

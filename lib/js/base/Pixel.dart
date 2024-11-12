@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:js/js.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 // 像素坐标，确定地图上的一个像素点。
 // x 类型：Number   像素坐标的X方向坐标

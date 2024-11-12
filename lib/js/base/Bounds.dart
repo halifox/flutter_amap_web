@@ -2,7 +2,6 @@
 library amap;
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 // 地物对象的经纬度矩形范围。
 // southWest 类型：LngLat   矩形范围的西南角经纬度坐标

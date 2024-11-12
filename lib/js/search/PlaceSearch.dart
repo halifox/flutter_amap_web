@@ -22,7 +22,8 @@ class PlaceSearch {
   // keyword (string) 关键词
   // bounds (AMap.Bounds) 范围
   // callback (searchCallback) 搜索结果回调
-  external searchInBounds(String keyWord, Bounds bounds, ResultCallback<SearchResult> callback);
+  external searchInBounds(
+      String keyWord, Bounds bounds, ResultCallback<SearchResult> callback);
 
   //根据中心点经纬度、半径以及关键字进行周边查询 radius取值范围：0-50000
   //
@@ -30,7 +31,8 @@ class PlaceSearch {
   // keyword (string) 关键字
   // center (AMap.LngLat) 中心点经纬度
   // radius (number) 半径
-  external searchNearBy(String keyword, LngLat center, num radius, ResultCallback<SearchResult> callback);
+  external searchNearBy(String keyword, LngLat center, num radius,
+      ResultCallback<SearchResult> callback);
 }
 
 // city: "北京", //城市
@@ -59,9 +61,9 @@ class PlaceSearchOptions {
 class SearchResult {
   external String get info;
 
-  external List<dynamic /*String*/> get keywordList;
+  external List<dynamic /*String*/ > get keywordList;
 
-  external List<dynamic /*CityInfo*/> get cityList;
+  external List<dynamic /*CityInfo*/ > get cityList;
 
   external PoiList get poiList;
 }
@@ -95,7 +97,7 @@ class PoiList {
 
   external int get count;
 
-  external List<dynamic /*Poi*/> get pois;
+  external List<dynamic /*Poi*/ > get pois;
 }
 
 // id 类型：string	兴趣点id

@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:js/js.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 // 固定于地图最上层的用于控制地图某些状态的 DOM 组件类型
 @JS()

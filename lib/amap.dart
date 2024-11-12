@@ -21,6 +21,7 @@ export 'js/driving/Riding.dart';
 export 'js/driving/Transfer.dart';
 export 'js/driving/Walking.dart';
 export 'js/ext.dart';
+export 'js/layer/Layer.dart';
 export 'js/layer/TileLayer.dart';
 export 'js/loader.dart';
 export 'js/location/Geolocation.dart';

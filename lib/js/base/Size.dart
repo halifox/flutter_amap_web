@@ -1,7 +1,7 @@
 @JS('AMap')
 library amap;
 
-import 'package:js/js.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 // 地物对象的像素尺寸
 // width 类型：Number   地物对象的宽度，单位：像素

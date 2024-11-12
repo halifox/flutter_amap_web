@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 /// `executeAsync` 是一个异步函数，接受一个操作回调作为参数，执行该操作并根据返回的状态处理结果。
 /// 该函数使用 `Completer` 来管理异步操作的结果，最终返回一个 `Future<T>` 对象。

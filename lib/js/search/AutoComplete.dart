@@ -2,7 +2,6 @@
 library amap;
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 // 根据输入关键字提示匹配信息，可将Poi类型和城市作为输入提示的限制条件。
 // https://lbs.amap.com/api/javascript-api-v2/documentation#autocomplete

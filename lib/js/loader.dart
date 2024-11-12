@@ -3,7 +3,7 @@
 @JS('AMapLoader')
 library loader;
 
-import 'package:js/js.dart';
+import 'package:flutter_web_amap/amap.dart';
 
 /// 高德地图 Loader js
 external load(LoaderOptions options);

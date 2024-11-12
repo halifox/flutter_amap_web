@@ -10,7 +10,7 @@ import 'package:js/js.dart';
 @JS()
 @anonymous
 class Size {
-  external factory Size(num width, num height);
+  external factory Size({num width, num height});
 
   // getWidth 方法：获取地物对象的宽度
   // 返回：Number   地物对象的宽度，单位：像素

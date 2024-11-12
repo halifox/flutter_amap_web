@@ -11,7 +11,7 @@ import 'package:js/js.dart';
 @JS()
 @anonymous
 class LngLat {
-  external factory LngLat(num lng, num lat, [bool noAutofix]);
+  external factory LngLat({num lng, num lat, bool noAutofix});
 
   // offset 方法：经度和纬度平移
   // w 类型：Number   经度偏移量，单位：米，正值表示向东，负值表示向西

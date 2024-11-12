@@ -11,7 +11,7 @@ import 'package:js/js.dart';
 @JS()
 @anonymous
 class Bounds {
-  external factory Bounds(LngLat southWest, LngLat northEast);
+  external factory Bounds({LngLat southWest, LngLat northEast});
 
   // contains 方法：判断指定点是否在矩形范围内
   // point 类型：LngLat   要判断的点坐标

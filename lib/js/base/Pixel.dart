@@ -10,7 +10,7 @@ import 'package:js/js.dart';
 @JS()
 @anonymous
 class Pixel {
-  external factory Pixel(num x, num y);
+  external factory Pixel({num x, num y});
 
   // getX 方法：获取像素坐标的X方向坐标
   // 返回：Number   像素坐标的X方向坐标

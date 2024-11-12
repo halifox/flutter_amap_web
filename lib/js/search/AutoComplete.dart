@@ -39,7 +39,7 @@ class AutoOptions {
   });
 }
 
-// info 类型：string	查询状态说明
+// info 类型：string	查询状态说明 "OK"
 // count 类型：number	输入提示条数
 // tips 类型：Array<Tip>	输入提示列表
 @JS()

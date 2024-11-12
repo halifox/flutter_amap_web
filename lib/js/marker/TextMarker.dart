@@ -155,11 +155,11 @@ class TextMarker {
 
   // 设置阴影效果
   // icon 类型：Icon - 设置点标记的阴影图标
-  external void setShadow(Icon icon);
+  external void setShadow(IconMarker icon);
 
   // 获取阴影图标
   // 返回：Icon - 当前点标记的阴影图标
-  external Icon getShadow();
+  external IconMarker getShadow();
 
   // 设置用户自定义属性
   // ext 类型：dynamic - 可以为任意类型，用于存储自定义数据，如Marker的ID等
@@ -208,7 +208,7 @@ class TextMarkerOptions {
     double angle,
     bool autoRotation,
     String animation,
-    Icon shadow,
+    IconMarker shadow,
     String title,
     bool clickable,
     dynamic extData,

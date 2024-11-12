@@ -125,10 +125,10 @@ class Marker {
   external bool getTop();
 
   /// 设置Marker的阴影图标
-  external void setShadow(Icon icon);
+  external void setShadow(IconMarker icon);
 
   /// 获取Marker的阴影图标
-  external Icon getShadow();
+  external IconMarker getShadow();
 
   /// 设置Marker的可点击区域
   external void setShape(MarkerShape shape);
@@ -185,7 +185,7 @@ class MarkerOptions {
     double angle,
     bool autoRotation,
     String animation,
-    Icon shadow,
+    IconMarker shadow,
     String title,
     bool clickable,
     MarkerShape shape,

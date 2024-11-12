@@ -220,6 +220,11 @@ class PoiList {
 @JS()
 @anonymous
 class Poi {
+  external factory Poi({
+    String name,
+    LngLat location,
+  });
+
   external String get id;
 
   external String get name;

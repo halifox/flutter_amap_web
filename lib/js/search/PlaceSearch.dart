@@ -2,7 +2,6 @@
 library amap;
 
 import 'package:flutter_web_amap/amap.dart';
-import 'package:js/js.dart';
 
 /// 地点搜索服务插件，提供某一特定地区的位置查询服务。
 /// https://lbs.amap.com/api/javascript-api-v2/documentation#placesearch
@@ -60,9 +59,9 @@ class PlaceSearchOptions {
 class SearchResult {
   external String get info;
 
-  external List<dynamic /*String*/ > get keywordList;
+  external List<dynamic /*String*/> get keywordList;
 
-  external List<dynamic /*CityInfo*/ > get cityList;
+  external List<dynamic /*CityInfo*/> get cityList;
 
   external PoiList get poiList;
 }
@@ -96,7 +95,7 @@ class PoiList {
 
   external int get count;
 
-  external List<dynamic /*Poi*/ > get pois;
+  external List<dynamic /*Poi*/> get pois;
 }
 
 // id 类型：string	兴趣点id
@@ -120,6 +119,11 @@ class PoiList {
 @JS()
 @anonymous
 class Poi {
+  external factory Poi({
+    String name,
+    LngLat location,
+  });
+
   external String get id;
 
   external String get name;

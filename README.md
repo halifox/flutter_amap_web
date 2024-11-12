@@ -136,8 +136,8 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] Marker
   - [x] Text
   - [x] Icon
-  - [ ] LabelMarker
-  - [ ] ElasticMarker
+  - [x] LabelMarker
+  - [x] ElasticMarker
   - [ ] MarkerCluster
   - [ ] MassMarks
   - [ ] MoveAnimation

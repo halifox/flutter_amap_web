@@ -3,29 +3,46 @@ library amap;
 
 import 'package:flutter_web_amap/amap.dart';
 
-// 根据输入关键字提示匹配信息，可将Poi类型和城市作为输入提示的限制条件。
-// https://lbs.amap.com/api/javascript-api-v2/documentation#autocomplete
-@JS()
-class AutoComplete {
-  external AutoComplete(AutoOptions opts);
+// AMap.Autocomplete 类：根据输入关键字提供匹配提示，支持设置Poi类型和城市作为输入提示的限制条件。
 
-  //根据输入关键字提示匹配信息，支持中文、拼音
-  external search(String keyword, ResultCallback<AutocompleteResult> callback);
-}
-
-// type 类型：string	输入提示时限定POI类型，多个类型用“|”分隔，目前只支持Poi类型编码如“050000” 默认值：所有类别
-// city 类型：string	输入提示时限定城市。可选值：城市名（中文或中文全拼）、citycode、adcode；默认值：“全国”
-// datatype 类型：string	返回的数据类型。可选值：all-返回所有数据类型、poi-返回POI数据类型、bus-返回公交站点数据类型、busline-返回公交线路数据类型目前暂时不支持多种类型
-// citylimit 类型：boolean	是否强制限制在设置的城市内搜索,默认值为：false，true：强制限制设定城市，false：不强制限制设定城市
-// input 类型：(string | HTMLDivElement)	可选参数，用来指定一个input输入框，设定之后，在input输入文字将自动生成下拉选择列表。支持传入输入框DOM对象的id值，或直接传入输入框的DOM对象。
-// output 类型：(string | HTMLDivElement)	可选参数，指定一个现有的div的id或者元素，作为展示提示结果的容器，当指定了input的时候有效，缺省的时候将自动创建一个显示结果面板
-// outPutDirAuto 类型：boolean	默认为true，表示是否在input位于页面较下方的时候自动将输入面板显示在input上方以避免被遮挡
-// closeResultOnScroll 类型：boolean	页面滚动时关闭搜索结果列表，默认 true
-// lang 类型：string	设置检索语言类型，默认中文 'zh_cn'
 @JS()
 @anonymous
-class AutoOptions {
-  external factory AutoOptions({
+class Autocomplete {
+  external factory Autocomplete({AutocompleteOptions opts});
+
+  // 根据输入关键字提示匹配信息，支持中文、拼音
+  // keyword 类型：String - 输入的查询关键字
+  // callback 类型：Function - 回调函数，接受两个参数：status（String）和result（AutocompleteResult 或 错误信息）
+  external void search(
+      String keyword, ResultCallback<AutocompleteResult> callback);
+
+  // 设置提示POI类型，多个类型用“|”分隔
+  // type 类型：String - POI类型编码，例如“050000”
+  // 默认值：所有类别
+  external void setType(String type);
+
+  // 设置城市
+  // city 类型：String - 城市名称，用于限制提示结果
+  external void setCity(String city);
+
+  // 设置是否强制限制城市
+  // cityLimit 类型：bool - 如果为true，强制限制查询结果仅在指定城市范围内
+  external void setCityLimit(bool cityLimit);
+}
+
+// type 类型：String	输入提示时限定POI类型，多个类型用“|”分隔，POI相关类型请在网站“相关下载”处下载
+// 默认值：所有类别
+// city 类型：String	输入提示时限定城市，城市名（中文或中文全拼）、citycode、adcode
+// 默认值：“全国”
+// datatype 类型：String	返回的数据类型，可选值：all、poi、bus、busline
+// citylimit 类型：Boolean	是否强制限制在设置的城市内搜索，默认值：false
+// input 类型：String/HTMLInputElement	指定一个input输入框，传入DOM对象或id
+// output 类型：String/HTMLDivElement	指定显示提示结果的容器
+// outPutDirAuto 类型：Boolean	是否自动调整提示面板位置，默认true
+@JS()
+@anonymous
+class AutocompleteOptions {
+  external factory AutocompleteOptions({
     String type,
     String city,
     String datatype,
@@ -33,8 +50,6 @@ class AutoOptions {
     String input,
     String output,
     bool outPutDirAuto,
-    bool closeResultOnScroll,
-    String lang,
   });
 }
 

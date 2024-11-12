@@ -53,31 +53,6 @@ class AMap {
 typedef ResultCallback<T> = Function(String status, T result);
 
 @JS()
-class Marker {
-  external Marker(MarkerOptions opts);
-}
-
-@JS()
-@anonymous
-class MarkerOptions {
-  external factory MarkerOptions({
-    /// 要显示该marker的地图对象
-    AMap map,
-
-    /// 点标记在地图上显示的位置
-    LngLat position,
-    AMapIcon icon,
-    String title,
-    Pixel offset,
-    String anchor,
-  });
-
-  external LngLat get position;
-
-  external set position(LngLat v);
-}
-
-@JS()
 @anonymous
 class CircleOptions {
   external factory CircleOptions();
@@ -188,16 +163,6 @@ class MapOptions {
   external num get zoom;
 
   external String get viewMode;
-}
-
-@JS()
-@anonymous
-class IconOptions {
-  external factory IconOptions({
-    Size size,
-    String image,
-    Size imageSize,
-  });
 }
 
 @JS()

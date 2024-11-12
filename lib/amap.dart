@@ -32,5 +32,8 @@ export 'js/marker/Marker.dart';
 export 'js/marker/TextMarker.dart';
 export 'js/search/AutoComplete.dart';
 export 'js/search/CloudDataSearch.dart';
+export 'js/search/DistrictSearch.dart';
+export 'js/search/LineSearch.dart';
 export 'js/search/PlaceSearch.dart';
+export 'js/search/StationSearch.dart';
 export 'view/amap_view.dart';

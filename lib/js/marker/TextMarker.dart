@@ -8,9 +8,8 @@ import 'package:flutter_web_amap/amap.dart';
 // 该类用于在地图上创建文本标记，可以设置样式、位置、动画效果等。
 
 @JS("Text")
-@anonymous
 class TextMarker {
-  external factory TextMarker({TextOptions opt});
+  external TextMarker(TextOptions opt);
 
   // 获取文本内容
   // 返回：String - 文本标记的内容

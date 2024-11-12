@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.Autocomplete 类：根据输入关键字提供匹配提示，支持设置Poi类型和城市作为输入提示的限制条件。
 
 @JS()
-@anonymous
 class Autocomplete {
-  external factory Autocomplete({AutocompleteOptions opts});
+  external Autocomplete(AutocompleteOptions opts);
 
   // 根据输入关键字提示匹配信息，支持中文、拼音
   // keyword 类型：String - 输入的查询关键字

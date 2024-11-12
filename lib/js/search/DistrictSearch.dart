@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.DistrictSearch 类：行政区查询服务，用于根据关键字查询行政区或商圈信息，支持设置查询级别、返回下级行政区等功能。
 
 @JS()
-@anonymous
 class DistrictSearch {
-  external factory DistrictSearch({DistrictSearchOptions opts});
+  external DistrictSearch(DistrictSearchOptions opts);
 
   // 根据关键字查询行政区或商圈信息
   // keywords 类型：String - 查询的关键字，支持行政区名、citycode、adcode、商圈名

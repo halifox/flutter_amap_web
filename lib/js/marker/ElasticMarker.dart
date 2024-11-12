@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // ElasticMarker 类：灵活点标记，支持随着地图级别变化而改变图标和大小的点标记。
 
 @JS()
-@anonymous
 class ElasticMarker {
-  external factory ElasticMarker({ElasticMarkerOptions opt});
+  external ElasticMarker(ElasticMarkerOptions opt);
 
   // 唤起高德地图客户端标注页
   // obj: 必须包含 name（String）和 position（LngLat）

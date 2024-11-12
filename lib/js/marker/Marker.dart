@@ -6,7 +6,7 @@ import 'package:flutter_web_amap/amap.dart';
 //点标记
 @JS()
 class Marker {
-  external factory Marker(MarkerOptions opt);
+  external Marker(MarkerOptions opt);
 
   /// 唤起高德地图客户端标注页
   external void markOnAMAP(Map<String, dynamic> obj);
@@ -197,7 +197,7 @@ class MarkerOptions {
 // AMap.MarkerShape(opt: MarkerShapeOptions)	构造一个Marker可点击区域对象，通过MarkerShapeOptions设置可点击区域属性
 @JS()
 class MarkerShape {
-  external factory MarkerShape(MarkerShapeOptions opt);
+  external MarkerShape(MarkerShapeOptions opt);
 }
 
 // coords 类型：Array.<Number>	可点击区域组成元素数组，存放图形的像素坐标等信息，取决于type类型

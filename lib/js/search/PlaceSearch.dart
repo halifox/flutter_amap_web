@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.PlaceSearch 类：地点搜索服务，提供某一特定地区的位置查询服务，支持关键字搜索、周边查询、范围查询等。
 
 @JS()
-@anonymous
 class PlaceSearch {
-  external factory PlaceSearch({PlaceSearchOptions opts});
+  external PlaceSearch(PlaceSearchOptions opts);
 
   // 根据关键字进行搜索，支持中文、拼音、繁体、英文
   // keyword 类型：String - 查询的关键字

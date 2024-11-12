@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.StationSearch 类：公交站点查询服务，根据输入关键字或ID查询公交站点信息。
 
 @JS()
-@anonymous
 class StationSearch {
-  external factory StationSearch({StationSearchOptions opts});
+  external StationSearch(StationSearchOptions opts);
 
   // 根据给定的公交站点ID进行公交站点详情检索
   // id 类型：String - 公交站点的唯一标识
@@ -60,14 +59,14 @@ class StationSearchOptions {
 // info 类型：string	成功状态文字描述
 // stationInfo 类型：List<StationInfo>	根据查询条件返回公交站点信息
 // keywordList 类型：List<String>	查无此公交站时，返回的建议关键字列表
-// cityList 类型：List<CityInfo>	查该城市无此公交站时，返回的建议城市列表
+// cityList 类型：List<StationCityInfo>	查该城市无此公交站时，返回的建议城市列表
 @JS()
 @anonymous
 class StationSearchResult {
   external String info;
   external List<StationInfo> stationInfo;
   external List<String> keywordList;
-  external List<CityInfo> cityList;
+  external List<StationCityInfo> cityList;
 }
 
 // StationInfo 对象:
@@ -104,22 +103,13 @@ class Busline {
   external String end_stop;
 }
 
-// CityInfo 对象
+// StationCityInfo 对象
 // 可根据需要添加具体字段，假设是类似于 cityName 和 cityCode
 @JS()
 @anonymous
-class CityInfo {
+class StationCityInfo {
   external String cityName;
   external String cityCode;
 
-  external factory CityInfo({String cityName, String cityCode});
-}
-
-@JS()
-@anonymous
-class LngLat {
-  external double lng;
-  external double lat;
-
-  external factory LngLat({double lng, double lat});
+  external factory StationCityInfo({String cityName, String cityCode});
 }

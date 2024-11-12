@@ -6,9 +6,8 @@ import 'package:flutter_web_amap/amap.dart';
 // LabelMarker 类：支持大量点标注和文本标注的绘制，基于 AMap.LabelsLayer 图层绘制。
 
 @JS()
-@anonymous
 class LabelMarker {
-  external factory LabelMarker({LabelMarkerOptions opt});
+  external LabelMarker(LabelMarkerOptions opt);
 
   // 获取标注位置
   external LngLat getPosition();

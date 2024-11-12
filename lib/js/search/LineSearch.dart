@@ -5,9 +5,8 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.LineSearch 类：公交线路查询服务，通过公交线路名称或ID查询公交线路信息，包括起点、终点、途经站点等。
 
 @JS()
-@anonymous
 class LineSearch {
-  external factory LineSearch({LineSearchOptions opts});
+  external LineSearch(LineSearchOptions opts);
 
   // 根据给定的公交线路ID进行公交线路详情检索
   // id 类型：String - 公交线路的唯一标识
@@ -63,14 +62,14 @@ class LineSearchOptions {
 // info 类型：string	成功状态文字描述
 // LineInfo 类型：List<LineInfo>	根据查询条件返回公交路线信息
 // keywordList 类型：List<String>	查无此公交站时，返回的建议关键字列表
-// cityList 类型：List<CityInfo>	查该城市无此公交站时，返回的建议城市列表
+// cityList 类型：List<LineSearchCityInfo>	查该城市无此公交站时，返回的建议城市列表
 @JS()
 @anonymous
 class LineSearchResult {
   external String info;
   external List<LineInfo> lineInfo;
   external List<String> keywordList;
-  external List<CityInfo> cityList;
+  external List<LineSearchCityInfo> cityList;
 }
 
 // LineInfo（基础信息）对象:
@@ -103,35 +102,12 @@ class LineInfo {
   external String company;
 }
 
-// CityInfo 对象
+// LineSearchCityInfo 对象
 @JS()
 @anonymous
-class CityInfo {
+class LineSearchCityInfo {
   external String cityName;
   external String cityCode;
 
-  external factory CityInfo({String cityName, String cityCode});
-}
-
-// Bounds 对象（假设包含一个范围，例如北纬、南纬、东经、西经）
-@JS()
-@anonymous
-class Bounds {
-  external double north;
-  external double south;
-  external double east;
-  external double west;
-
-  external factory Bounds(
-      {double north, double south, double east, double west});
-}
-
-// LngLat 对象
-@JS()
-@anonymous
-class LngLat {
-  external double lng;
-  external double lat;
-
-  external factory LngLat({double lng, double lat});
+  external factory LineSearchCityInfo({String cityName, String cityCode});
 }

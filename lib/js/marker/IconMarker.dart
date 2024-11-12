@@ -6,7 +6,7 @@ import 'package:flutter_web_amap/amap.dart';
 // AMap.Icon(opt: IconOptions)	构造点覆盖物图标，通过IconOptions设置图标属性
 @JS("Icon")
 class IconMarker {
-  external factory IconMarker(IconMarkerOptions opt);
+  external IconMarker(IconMarkerOptions opt);
 
   // 获取图标图片大小
   external Size getImageSize();

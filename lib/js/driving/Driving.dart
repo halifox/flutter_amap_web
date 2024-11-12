@@ -222,7 +222,7 @@ class DriveStepDetail {
 // cities.city.adcode
 // 类型：string	区域编码
 // cities.city.districts
-// 类型：Array<District>	途径行政区列表
+// 类型：Array<ViaDistrict>	途径行政区列表
 @JS()
 @anonymous
 class ViaCity {
@@ -230,7 +230,7 @@ class ViaCity {
     String name,
     String cityCode,
     String adCode,
-    List<District> districts,
+    List<ViaDistrict> districts,
   });
 
   external String get name;
@@ -239,7 +239,7 @@ class ViaCity {
 
   external String get adCode;
 
-  external List<District> get districts;
+  external List<ViaDistrict> get districts;
 }
 
 // cities.city.districts.district.name
@@ -248,8 +248,8 @@ class ViaCity {
 // 类型：string	区域编码
 @JS()
 @anonymous
-class District {
-  external factory District({
+class ViaDistrict {
+  external factory ViaDistrict({
     String name,
     String adCode,
   });

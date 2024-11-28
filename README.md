@@ -190,13 +190,13 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [ ] GeocoderCallback
   - [ ] ReGeocoderCallback
   - [ ] convertFrom
-- [ ] 路线规划
+- [x] 路线规划
   - [x] Driving
   - [x] DrivingCallback
   - [x] DrivingResult
   - [x] DriveStepBasic
   - [x] DriveStepDetail
-  - [ ] TruckDriving
+  - [x] TruckDriving
   - [x] Walking
   - [x] WalkingCallback
   - [x] WalkingResult
@@ -206,10 +206,10 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] Riding
   - [x] RidingCallback
   - [x] RidingResult
-  - [ ] DragRoute
-  - [ ] DragRouteTruck
-  - [ ] GraspRoad
-  - [ ] GraspRoadCallback
+  - [x] DragRoute
+  - [x] DragRouteTruck
+  - [x] GraspRoad
+  - [x] GraspRoadCallback
 - [ ] 其他服务
   - [ ] DistrictSearch
   - [ ] Weather

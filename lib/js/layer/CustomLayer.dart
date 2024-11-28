@@ -7,10 +7,10 @@ import 'package:flutter_web_amap/amap.dart';
 @JS()
 class CustomLayer {
   // 构造函数：初始化时提供 canvas 对象和自定义图层的参数选项
-  external CustomLayer({
+  external CustomLayer(
     dynamic canvas, // canvas 对象
     CustomLayerOption opts, // 默认图层参数
-  });
+  );
 
   // 获取当前图层的所有选项
   external CustomLayerOption getOptions();

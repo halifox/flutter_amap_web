@@ -6,7 +6,7 @@ import 'package:flutter_web_amap/amap.dart';
 // 用于加载OGC标准的WMS地图服务的一种图层类，仅支持EPSG3857坐标系统的WMS图层。
 // 查看WMS的OGC标准。
 @JS('TileLayer.WMS')
-class WMS extends TileLayer{
+class WMS extends TileLayer {
   external WMS(WMSLayerOptions opts);
 
   // 设置WMS图层的参数

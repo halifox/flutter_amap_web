@@ -123,16 +123,16 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] WMS
   - [x] WMTS
   - [x] MapboxVectorTileLayer
-- [ ] 自有数据图层
-  - [ ] HeatMap
-  - [ ] VectorLayer
-  - [ ] LabelsLayer
-  - [ ] CustomLayer
-  - [ ] Flexible
-  - [ ] ImageLayer
-  - [ ] CanvasLayer
-  - [ ] GLCustomLayer
-- [ ] 点标记
+- [x] 自有数据图层
+  - [x] HeatMap
+  - [x] VectorLayer
+  - [x] LabelsLayer
+  - [x] CustomLayer
+  - [x] Flexible
+  - [x] ImageLayer
+  - [x] CanvasLayer
+  - [x] GLCustomLayer
+- [x] 点标记
   - [x] Marker
   - [x] Text
   - [x] Icon

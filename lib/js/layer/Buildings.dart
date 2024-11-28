@@ -5,7 +5,7 @@ import 'package:flutter_web_amap/amap.dart';
 
 // 建筑楼块 3D 图层
 @JS()
-class Buildings extends TileLayer{
+class Buildings extends TileLayer {
   external Buildings(BuildingLayerOpts opts);
 
   // 设置楼块样式

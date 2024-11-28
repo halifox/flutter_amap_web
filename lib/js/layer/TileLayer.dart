@@ -5,7 +5,7 @@ import 'package:flutter_web_amap/amap.dart';
 
 //切片图层类，该类为基础类。
 @JS()
-class TileLayer extends Layer{
+class TileLayer extends Layer {
   external TileLayer(TileLayerOptions opts);
 
   external setMap(AMap map);

@@ -45,9 +45,9 @@ class Satellite extends TileLayer {
 class SatelliteLayerOptions {
   external factory SatelliteLayerOptions({
     List<int> zooms, // 支持的缩放级别范围
-    double opacity,   // 透明度
-    bool visible,     // 是否显示
-    int zIndex,       // 图层叠加顺序
-    int tileSize,     // 切片大小
+    double opacity, // 透明度
+    bool visible, // 是否显示
+    int zIndex, // 图层叠加顺序
+    int tileSize, // 切片大小
   });
 }

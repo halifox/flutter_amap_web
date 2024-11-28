@@ -1,8 +1,8 @@
-# 高德地图 Flutter Web 端插件
+# 高德地图 Flutter Web 插件
 
 本插件是一个基于高德地图的 Flutter Web 专用插件，**专为仅在 Web 平台运行的 Flutter 项目设计。** 通过此插件，可轻松在 Flutter Web 应用中嵌入和控制高德地图功能。
 
-## 注意事项
+## 重要提示
 
 - **核心实现**：该库的核心实现基于 Dart 与 JavaScript 之间的交互，通过访问高德地图 JavaScript API 来实现地图功能。它是一个**简易的封装库**，**并不保证对高德地图 JavaScript API 的所有功能都进行了完整的封装**。因此，若您需要使用高德地图的其他功能，可能需要自行扩展或修改库中的实现。
 
@@ -14,8 +14,7 @@
 
 - **Web 支持**：该插件仅支持 Web 端使用，确保项目的 `index.html` 文件正确加载高德地图的 JavaScript SDK。若在非 Web 平台使用，将无法正常工作。
 
-
-## 使用方法
+## 安装与配置
 
 ### 1. 在 `web/index.html` 中引入高德地图 JavaScript SDK
 
@@ -25,7 +24,7 @@
 <script src="https://webapi.amap.com/loader.js"></script>
 ```
 
-### 2. 创建并初始化地图控件
+### 2. 创建并初始化地图视图
 
 在 Flutter 项目中使用 `AMapView` 组件来创建和初始化地图视图。以下是一个简单的示例：
 
@@ -71,12 +70,11 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-## 文档
+## 官方文档
 
 [高德开放平台-参考手册](https://lbs.amap.com/api/javascript-api-v2/documentation)
 
-
-## 工具函数
+## 工具方法
 
 1. `Future<T> executeAsync<T>(Function(ResultCallback<T> callback) operation)`
 
@@ -92,30 +90,29 @@ GeolocationResult result = await executeAsync<GeolocationResult>((callback) =>
 print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLng()}");
 ```
 
-## 相关文档
+## 相关资源
 
-- [Creating a Dart-to-Javascript interop library](https://medium.com/@thebosz/creating-a-dart-to-javascript-interop-library-c97da204c34a)
+- [创建 Dart 与 JavaScript 交互库](https://medium.com/@thebosz/creating-a-dart-to-javascript-interop-library-c97da204c34a)
+- [Dart 中 JavaScript 互操作历史](https://medium.com/dartlang/history-of-js-interop-in-dart-98b06991158f)
 
-- [History of JS interop in Dart](https://medium.com/dartlang/history-of-js-interop-in-dart-98b06991158f)
+## 开发笔记
 
-## 笔记
-
-- 使用魔法注解`@JS()`允许我们声明 API 签名
-  - @JS 注解用于将 Dart 类、函数或变量暴露给 JavaScript，或者访问 JavaScript 中的对象。
+- 使用 `@JS()` 注解可以声明 API 签名
+  - `@JS` 注解用于将 Dart 类、函数或变量暴露给 JavaScript，或者访问 JavaScript 中的对象。
   - 它可以指定一个 JavaScript 的命名空间，或者直接绑定一个全局 JavaScript 对象。
 
-- 在 Dart 中，使用 @JS 访问 JavaScript 函数或对象时，需要用 `external` 关键字声明属性或方法，这意味着它们的具体实现位于 JavaScript，而非 Dart。
+- 在 Dart 中，使用 `@JS` 访问 JavaScript 函数或对象时，需要用 `external` 关键字声明属性或方法，这意味着它们的具体实现位于 JavaScript，而非 Dart。
   - `external` 标记的方法或属性不会在 Dart 中生成实现体，而是直接链接到 JavaScript。
 
 - 在 Dart 调用 JavaScript 时，有时需要传递 Dart 函数作为回调函数给 JavaScript，这时可以使用 `allowInterop` 或 `allowInteropCaptureThis`：
   - `allowInterop`：将 Dart 函数转换为 JavaScript 可调用的函数。
   - `allowInteropCaptureThis`：用于处理需要捕获 this 上下文的情况。
 
-- Map 不能直接转化为 Javascript 对象，为了绕过这个限制，我们需要使用`@anonymous`创建一个 "匿名"类。
+- Map 不能直接转化为 JavaScript 对象，为了绕过这个限制，我们需要使用`@anonymous`创建一个 "匿名"类。
 
-- 来自JavaScript的数组实例总是List<dynamic>JavaScript数组没有具体的元素类型，因此JavaScript函数返回的数组不能在不检查每个元素的情况下保证其元素类型。
+- 来自 JavaScript 的数组实例总是 `List<dynamic>`。JavaScript 数组没有具体的元素类型，因此 JavaScript 函数返回的数组不能在不检查每个元素的情况下保证其元素类型。
 
-## 实现
+## 组件实现
 
 - [x] 基础类
   - [x] LngLat

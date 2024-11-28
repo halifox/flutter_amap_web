@@ -102,14 +102,14 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
 在阅读《相关文档》和《笔记》后，可以根据项目内现有的格式，并参照《高德开放平台-参考手册》，完成剩余进度。
 
 - [x] 基础类
-  - [x] [LngLat](./lib/js/base/LngLat.dart)
-  - [x] [Bounds](./lib/js/base/Bounds.dart)
-  - [x] [Pixel](./lib/js/base/Pixel.dart)
-  - [x] [Size](./lib/js/base/Size.dart)
+  - [x] LngLat
+  - [x] Bounds
+  - [x] Pixel
+  - [x] Size
 - [ ] 事件
   - [ ] Event
 - [ ] 地图
-  - [x] [Map](./lib/js/amap.dart)
+  - [x] Map
   - [ ] MapsEvent
 - [ ] 高德官方图层
   - [x] TileLayer
@@ -133,14 +133,14 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [ ] CanvasLayer
   - [ ] GLCustomLayer
 - [ ] 点标记
-  - [x] [Marker](./lib/js/marker/Marker.dart)
-  - [x] [Text](./lib/js/marker/TextMarker.dart)
-  - [x] [Icon](./lib/js/marker/IconMarker.dart)
-  - [x] [LabelMarker](./lib/js/marker/LabelMarker.dart)
-  - [x] [ElasticMarker](./lib/js/marker/ElasticMarker.dart)
-  - [ ] MarkerCluster
-  - [ ] MassMarks
-  - [ ] MoveAnimation
+  - [x] Marker
+  - [x] Text
+  - [x] Icon
+  - [x] LabelMarker
+  - [x] ElasticMarker
+  - [x] MarkerCluster
+  - [x] MassMarks
+  - [x] MoveAnimation
   - [ ] AnimationCallback
   - [ ] EasingCallback
 - [ ] 信息窗体
@@ -221,7 +221,7 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] Geolocation
   - [x] GeolocationCallBack
   - [x] GeolocationResult
-  - [ ] CitySearch
+  - [x] CitySearch
 - [ ] 通用库
   - [ ] GeometryUtil
   - [ ] DomUtil

@@ -15,6 +15,7 @@
 ### 2. 创建并初始化地图控件
 
 在 Flutter 项目中使用 `AMapView` 组件来创建和初始化地图视图。以下是一个简单的示例：
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_web_amap/amap.dart';
@@ -24,6 +25,7 @@ void main() {
   runApp(const MyApp());
 }
 ```
+
 ```dart
 AMapView(
   loaderOptions: LoaderOptions(
@@ -100,9 +102,7 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
 
 - 来自JavaScript的数组实例总是List<dynamic>JavaScript数组没有具体的元素类型，因此JavaScript函数返回的数组不能在不检查每个元素的情况下保证其元素类型。
 
-## 进度
-
-在阅读《相关文档》和《笔记》后，可以根据项目内现有的格式，并参照《高德开放平台-参考手册》，完成剩余进度。
+## 实现
 
 - [x] 基础类
   - [x] LngLat

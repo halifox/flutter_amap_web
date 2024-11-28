@@ -51,12 +51,6 @@ class AMap {
 
 typedef ResultCallback<T> = Function(String status, T result);
 
-@JS()
-@anonymous
-class CircleOptions {
-  external factory CircleOptions();
-}
-
 @JS('Icon')
 class AMapIcon {
   external AMapIcon(IconOptions options);

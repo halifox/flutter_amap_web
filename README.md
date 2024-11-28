@@ -210,14 +210,14 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] DragRouteTruck
   - [x] GraspRoad
   - [x] GraspRoadCallback
-- [ ] 其他服务
-  - [ ] DistrictSearch
-  - [ ] Weather
-  - [ ] WeatherLiveResult
-  - [ ] WeatherForecastResult
-  - [ ] StationSearch
-  - [ ] LineSearch
-- [ ] 定位
+- [x] 其他服务
+  - [x] DistrictSearch
+  - [x] Weather
+  - [x] WeatherLiveResult
+  - [x] WeatherForecastResult
+  - [x] StationSearch
+  - [x] LineSearch
+- [x] 定位
   - [x] Geolocation
   - [x] GeolocationCallBack
   - [x] GeolocationResult

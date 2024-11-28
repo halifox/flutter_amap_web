@@ -52,6 +52,7 @@ export 'js/marker/IconMarker.dart';
 export 'js/marker/LabelMarker.dart';
 export 'js/marker/Marker.dart';
 export 'js/marker/TextMarker.dart';
+export 'js/other/Weather.dart';
 export 'js/search/AutoComplete.dart';
 export 'js/search/CloudDataSearch.dart';
 export 'js/search/DistrictSearch.dart';

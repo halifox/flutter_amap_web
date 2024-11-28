@@ -1,3 +1,30 @@
+# 强烈推荐使用 [flutter_map](https://pub.dev/packages/flutter_map) 插件结合 [高德地图](https://lbs.amap.com/) 提供的瓦片数据
+
+```dart
+FlutterMap(
+  options: MapOptions(
+    initialCenter: LatLng(39.90, 116.40),
+    initialZoom: 17,
+  ),
+  children: [
+    TileLayer(
+      // 高德卫星 AmapSatellite
+      // http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&style=6
+      // 高德地图 AmapTile
+      // http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&style=7
+      // 高德路网含标注 AmapRoadMark
+      // http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&scl=1&style=8
+      // 高德路网不含标注 AmapRoad
+      // http://wprd04.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&scl=2&style=8
+      urlTemplate: 'http://{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&style=7',
+      subdomains: ['wprd01', 'wprd02', 'wprd03', 'wprd04'],
+    ),
+  ],
+)
+```
+
+---
+
 # 高德地图 Flutter Web 插件
 
 本插件为 **专为 Flutter Web 平台** 设计的高德地图插件，旨在简化在 Web 环境下使用高德地图的过程。通过此插件，用户可以轻松将高德地图集成到 Flutter Web 应用中，并进行地图操作和控制。

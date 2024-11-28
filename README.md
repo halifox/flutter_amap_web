@@ -185,11 +185,11 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] searchCallback
   - [x] CloudDataSearch
   - [x] CloudDataSearchCallback
-- [ ] 地理编码
-  - [ ] Geocoder
-  - [ ] GeocoderCallback
-  - [ ] ReGeocoderCallback
-  - [ ] convertFrom
+- [x] 地理编码
+  - [x] Geocoder
+  - [x] GeocoderCallback
+  - [x] ReGeocoderCallback
+  - [x] convertFrom
 - [x] 路线规划
   - [x] Driving
   - [x] DrivingCallback

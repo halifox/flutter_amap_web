@@ -10,6 +10,7 @@ export 'js/base/Bounds.dart';
 export 'js/base/LngLat.dart';
 export 'js/base/Pixel.dart';
 export 'js/base/Size.dart';
+export 'js/coder/Geocoder.dart';
 export 'js/control/Control.dart';
 export 'js/control/ControlBar.dart';
 export 'js/control/HawkEye.dart';

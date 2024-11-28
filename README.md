@@ -2,6 +2,19 @@
 
 本插件是一个基于高德地图的 Flutter Web 专用插件，**专为仅在 Web 平台运行的 Flutter 项目设计。** 通过此插件，可轻松在 Flutter Web 应用中嵌入和控制高德地图功能。
 
+## 注意事项
+
+- **核心实现**：该库的核心实现基于 Dart 与 JavaScript 之间的交互，通过访问高德地图 JavaScript API 来实现地图功能。它是一个**简易的封装库**，**并不保证对高德地图 JavaScript API 的所有功能都进行了完整的封装**。因此，若您需要使用高德地图的其他功能，可能需要自行扩展或修改库中的实现。
+
+- **功能限制**：该库并不保证对高德地图 API 所有现有功能的正确访问，特别是在不同浏览器环境或版本之间，可能会存在某些不兼容或无法预料的行为。如果您对高德地图 JavaScript API 的行为没有充分了解，强烈建议您先熟悉相关文档和 API，然后再考虑使用此库。
+
+- **使用建议**：由于本库依赖 Dart 与 JavaScript 之间的互操作，**除非您对 Dart 与 JavaScript 的交互过程非常熟悉，否则请不要直接在正式项目中使用此库**。如果您在使用过程中遇到无法解决的问题，可能需要手动调试或修改底层的 JavaScript 调用。
+
+- **安全配置**：确保 `securityJsCode` 和 `key` 值为您在高德平台申请的合法凭证。若 API 密钥配置错误，地图功能将无法正常显示或工作。
+
+- **Web 支持**：该插件仅支持 Web 端使用，确保项目的 `index.html` 文件正确加载高德地图的 JavaScript SDK。若在非 Web 平台使用，将无法正常工作。
+
+
 ## 使用方法
 
 ### 1. 在 `web/index.html` 中引入高德地图 JavaScript SDK
@@ -24,39 +37,44 @@ void main() {
   setAMapSecurityConfig('********************************');// 替换为你的高德地图 API 密钥
   runApp(const MyApp());
 }
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: AMapView(
+          loaderOptions: LoaderOptions(
+            key: "********************************",// 替换为你的高德地图 API Key
+            version: '2.0',//指定amap js 版本 可选：1.4、2
+            plugins: [...],//声明要使用到的插件
+          ),
+          onAMapViewCreated: (AMapController controller) async {
+            //当创建完成
+          },
+        ),
+      ),
+    );
+  }
+}
 ```
-
-```dart
-AMapView(
-  loaderOptions: LoaderOptions(
-    key: "********************************",// 替换为你的高德地图 API Key
-    version: '2.0',
-    plugins: [
-      PLUGIN_GEO_LOCATION,
-      PLUGIN_PLACE_SEARCH,
-      PLUGIN_SCALE,
-      PLUGIN_TOOL_BAR,
-      PLUGIN_AUTO_COMPLETE,
-    ],
-  ),
-  onAMapViewCreated: (AMapController controller) async {
-    Scale scale = Scale(ControlConfig());
-    controller.addControl(scale);
-
-    Geolocation geolocation = Geolocation(GeolocationOptions());
-    controller.addControl(geolocation);
-
-    GeolocationResult result = await executeAsync<GeolocationResult>((callback) => geolocation.getCurrentPosition(callback));
-    print("当前位置:${result.position.getLat()} ${result.position.getLng()}");
-  },
-)
-```
-
-[示例代码](example/lib/main.dart)
 
 ## 文档
 
 [高德开放平台-参考手册](https://lbs.amap.com/api/javascript-api-v2/documentation)
+
 
 ## 工具函数
 
@@ -74,11 +92,6 @@ GeolocationResult result = await executeAsync<GeolocationResult>((callback) =>
 print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLng()}");
 ```
 
-## 注意事项
-
-- **安全配置**：确保 `securityJsCode` 和 `key` 值为您在高德平台申请的合法凭证。
-- **Web 支持**：该插件仅支持 Web 端使用，确保项目的 `index.html` 文件正确加载高德地图的 JavaScript SDK。
-
 ## 相关文档
 
 - [Creating a Dart-to-Javascript interop library](https://medium.com/@thebosz/creating-a-dart-to-javascript-interop-library-c97da204c34a)
@@ -88,15 +101,15 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
 ## 笔记
 
 - 使用魔法注解`@JS()`允许我们声明 API 签名
-    - @JS 注解用于将 Dart 类、函数或变量暴露给 JavaScript，或者访问 JavaScript 中的对象。
-    - 它可以指定一个 JavaScript 的命名空间，或者直接绑定一个全局 JavaScript 对象。
+  - @JS 注解用于将 Dart 类、函数或变量暴露给 JavaScript，或者访问 JavaScript 中的对象。
+  - 它可以指定一个 JavaScript 的命名空间，或者直接绑定一个全局 JavaScript 对象。
 
 - 在 Dart 中，使用 @JS 访问 JavaScript 函数或对象时，需要用 `external` 关键字声明属性或方法，这意味着它们的具体实现位于 JavaScript，而非 Dart。
-    - `external` 标记的方法或属性不会在 Dart 中生成实现体，而是直接链接到 JavaScript。
+  - `external` 标记的方法或属性不会在 Dart 中生成实现体，而是直接链接到 JavaScript。
 
 - 在 Dart 调用 JavaScript 时，有时需要传递 Dart 函数作为回调函数给 JavaScript，这时可以使用 `allowInterop` 或 `allowInteropCaptureThis`：
-    - `allowInterop`：将 Dart 函数转换为 JavaScript 可调用的函数。
-    - `allowInteropCaptureThis`：用于处理需要捕获 this 上下文的情况。
+  - `allowInterop`：将 Dart 函数转换为 JavaScript 可调用的函数。
+  - `allowInteropCaptureThis`：用于处理需要捕获 this 上下文的情况。
 
 - Map 不能直接转化为 Javascript 对象，为了绕过这个限制，我们需要使用`@anonymous`创建一个 "匿名"类。
 
@@ -190,43 +203,3 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] CloudDataSearchCallback
 - [x] 地理编码
   - [x] Geocoder
-  - [x] GeocoderCallback
-  - [x] ReGeocoderCallback
-  - [x] convertFrom
-- [x] 路线规划
-  - [x] Driving
-  - [x] DrivingCallback
-  - [x] DrivingResult
-  - [x] DriveStepBasic
-  - [x] DriveStepDetail
-  - [x] TruckDriving
-  - [x] Walking
-  - [x] WalkingCallback
-  - [x] WalkingResult
-  - [x] Transfer
-  - [x] TransferCallback
-  - [x] TransferResult
-  - [x] Riding
-  - [x] RidingCallback
-  - [x] RidingResult
-  - [x] DragRoute
-  - [x] DragRouteTruck
-  - [x] GraspRoad
-  - [x] GraspRoadCallback
-- [x] 其他服务
-  - [x] DistrictSearch
-  - [x] Weather
-  - [x] WeatherLiveResult
-  - [x] WeatherForecastResult
-  - [x] StationSearch
-  - [x] LineSearch
-- [x] 定位
-  - [x] Geolocation
-  - [x] GeolocationCallBack
-  - [x] GeolocationResult
-  - [x] CitySearch
-- [ ] 通用库
-  - [ ] GeometryUtil
-  - [ ] DomUtil
-  - [ ] Browser
-  - [ ] Util 

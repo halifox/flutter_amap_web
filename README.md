@@ -111,7 +111,7 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
 - [ ] 地图
   - [x] Map
   - [ ] MapsEvent
-- [ ] 高德官方图层
+- [x] 高德官方图层
   - [x] TileLayer
   - [x] Traffic
   - [x] Satellite
@@ -119,10 +119,10 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [x] Buildings
   - [x] DistrictLayer
   - [x] IndoorMap
-- [ ] 行业标准图层
-  - [ ] WMS
-  - [ ] WMTS
-  - [ ] MapboxVectorTileLayer
+- [x] 行业标准图层
+  - [x] WMS
+  - [x] WMTS
+  - [x] MapboxVectorTileLayer
 - [ ] 自有数据图层
   - [ ] HeatMap
   - [ ] VectorLayer
@@ -147,15 +147,15 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
   - [ ] InfoWindow
 - [ ] 右键菜单
   - [ ] ContextMenu
-- [ ] 矢量图形
-  - [ ] Polygon
-  - [ ] Polyline
-  - [ ] BezierCurve
-  - [ ] Circle
-  - [ ] CircleMarker
-  - [ ] Ellipse
-  - [ ] Rectangle
-  - [ ] GeoJSON
+- [x] 矢量图形
+  - [x] Polygon
+  - [x] Polyline
+  - [x] BezierCurve
+  - [x] Circle
+  - [x] CircleMarker
+  - [x] Ellipse
+  - [x] Rectangle
+  - [x] GeoJSON
 - [ ] 群组
   - [ ] LayerGroup
   - [ ] OverlayGroup
@@ -178,13 +178,13 @@ print("Latitude: ${result.position.getLat()}, Longitude: ${result.position.getLn
 - [ ] 服务类
   - [ ] WebService
   - [ ] WebServiceCallback
-- [ ] 搜索
+- [x] 搜索
   - [x] AutoComplete
   - [x] AutoCompleteSearchCallback
   - [x] PlaceSearch
   - [x] searchCallback
-  - [ ] CloudDataSearch
-  - [ ] CloudDataSearchCallback
+  - [x] CloudDataSearch
+  - [x] CloudDataSearchCallback
 - [ ] 地理编码
   - [ ] Geocoder
   - [ ] GeocoderCallback

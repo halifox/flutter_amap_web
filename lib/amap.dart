@@ -5,6 +5,7 @@ library amap;
 
 export 'package:js/js.dart';
 
+export 'js/AMapSecurityConfig.dart';
 export 'js/amap.dart';
 export 'js/base/Bounds.dart';
 export 'js/base/LngLat.dart';

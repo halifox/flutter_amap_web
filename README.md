@@ -9,22 +9,25 @@
 在项目的 `web/index.html` 文件中添加以下代码，以引入高德地图 SDK 和安全配置：
 
 ```html
-<script type="text/javascript">
-    window._AMapSecurityConfig = {
-        securityJsCode: "2e56e0f9d5090b93cb8d25e2de7afb00",// 替换为你的高德地图 API 密钥
-    };
-</script>
 <script src="https://webapi.amap.com/loader.js"></script>
 ```
 
 ### 2. 创建并初始化地图控件
 
 在 Flutter 项目中使用 `AMapView` 组件来创建和初始化地图视图。以下是一个简单的示例：
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_web_amap/amap.dart';
 
+void main() {
+  setAMapSecurityConfig('********************************');// 替换为你的高德地图 API 密钥
+  runApp(const MyApp());
+}
+```
 ```dart
 AMapView(
   loaderOptions: LoaderOptions(
-    key: "21ddb39aa5593f6ebc311ec051441f00",// 替换为你的高德地图 API Key
+    key: "********************************",// 替换为你的高德地图 API Key
     version: '2.0',
     plugins: [
       PLUGIN_GEO_LOCATION,

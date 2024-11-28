@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_amap/amap.dart';
 
 void main() {
+  setAMapSecurityConfig('2e56e0f9d5090b93cb8d25e2de7afb01');
   runApp(const MyApp());
 }
 

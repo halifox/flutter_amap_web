@@ -1,6 +1,6 @@
-# 🌍 相比本项目，作者推荐使用 [flutter_map](https://pub.dev/packages/flutter_map) 与 [高德地图](https://lbs.amap.com/) 瓦片数据集成 📍  
+# 本项目已经归档，作者推荐使用 [flutter_map](https://pub.dev/packages/flutter_map) 与 [高德地图](https://lbs.amap.com/) 瓦片数据集成
 
-## 集成示例
+## 示例
 
 ```dart
 FlutterMap(
